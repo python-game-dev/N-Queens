@@ -44,8 +44,7 @@ class Board():
         #self.blit_screen()
 
     def draw_soln(self, window, soln, array, size):
-        self.img= [pg.transform.scale(pg.image.load('images/black_queen.png'), (size,size))]
-        self.img.append(pg.transform.scale(pg.image.load('images/white_queen.png'), (size,size)))
+        self.img= [(pg.transform.scale(pg.image.load('images/black_queen.png'), (size,size))),(pg.transform.scale(pg.image.load('images/white_queen.png'), (size,size)))]
         self.col = 0
         print(soln)
         for i in (soln):
