@@ -10,7 +10,7 @@ N-Queens game using pygame for AIML201
 ```
 
 ## Credits:
-Debashish Majumdar
-Manika Battan
-Sameeksha Sharma
-Vibhu Gupta
+* Debashish Majumdar
+* Manika Battan
+* Sameeksha Sharma
+* Vibhu Gupta
