@@ -8,3 +8,9 @@ N-Queens game using pygame for AIML201
 2. cd N-Queens
 3. python main.py
 ```
+
+## Credits:
+Debashish Majumdar
+Manika Battan
+Sameeksha Sharma
+Vibhu Gupta
