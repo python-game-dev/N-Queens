@@ -75,7 +75,7 @@ class MainMenu(Menu):
                 self.game.curr_menu = self.game.credits
             self.run_display = False
         
-class OptionsMenu(Menu):
+'''class OptionsMenu(Menu):
     def __init__(self, game):
         Menu.__init__(self, game)
         self.state = "Volume"
@@ -109,7 +109,7 @@ class OptionsMenu(Menu):
                 self.state = 'Volume'
                 self.cursor_rect.midtop = (self.volx + self.offset, self.voly)
         elif self.game.START_KEY:
-            pass
+            pass'''
 
 class CreditsMenu(Menu):
     def __init__(self, game):
@@ -206,12 +206,13 @@ class BoardSizeMenu(Menu):
             self.run_display = False
         elif self.game.START_KEY:
             if self.state == "sizefour":
-                self.game.board_four = True
+                self.game.board_four = True   
             elif self.state == "sizesix":
-                self.game.board_six = True
+                self.game.board_six = True   
             elif self.state == "sizeeight":
                 self.game.board_eight = True
             self.game.playing = True
+            self.game.running = False
             self.run_display = False
     
     def move_cursor(self):

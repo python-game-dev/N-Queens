@@ -25,12 +25,12 @@ class NQueen_Game():
         self.main_menu = MainMenu(self)
         self.player_type = PlayerTypeMenu(self)
         self.board_size = BoardSizeMenu(self)
-        self.options = OptionsMenu(self)
+        #self.options = OptionsMenu(self)
         self.credits = CreditsMenu(self)
         self.curr_menu = self.main_menu
         self.board = Board(self)
     def game_loop(self):
-        while self.playing:
+        if self.playing:
             self.check_events()
             if self.START_KEY:
                 self.playing=False
@@ -62,7 +62,7 @@ class NQueen_Game():
                 #self.draw_text('Type: HUMAN', 20, self.DISPLAY_W/2, self.DISPLAY_H/2-20)
                 #self.draw_text('Size: 8', 20, self.DISPLAY_W/2, self.DISPLAY_H/2 + 10)
                 self.board.draw_board(8)
-            self.board.board_window.blit(self.board.board_surface, (0,0))
+            #self.board.board_window.blit(self.board.board_surface, (0,0))
             pygame.display.update()
             self.reset_keys()
 
@@ -78,6 +78,8 @@ class NQueen_Game():
                 self.boardSix = False
                 self.boardEight = False
                 self.board.board_display = False
+                self.board.tempPos =[]
+                self.board.posArray = []
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
                     self.START_KEY = True
@@ -96,7 +98,7 @@ class NQueen_Game():
         self.board_four = False
         self.board_six = False
         self.board_eight = False
-
+    
     def reset_keys(self):
         self.UP_KEY = False
         self.DOWN_KEY = False
