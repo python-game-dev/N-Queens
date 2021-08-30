@@ -30,6 +30,7 @@ class NQueen_Game():
         self.curr_menu = self.main_menu
         self.board = Board(self)
     def game_loop(self):
+        self.playing = True
         if self.playing:
             self.check_events()
             if self.START_KEY:

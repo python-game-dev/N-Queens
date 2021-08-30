@@ -11,9 +11,11 @@ def main():
         
     #if g.playing:
     g.game_loop()
+
     while not done:
 	    for event in pg.event.get():
 		    if event.type == pg.QUIT:
-			    done = True  
+			    done = True
+              
 
 main()
