@@ -14,7 +14,7 @@ class Board():
         self.column_index = 0
         self.posArray = []
 
-    def draw_board(self, n):
+    def draw_board_AI(self, n):
         self.game.check_events()
         self.board_surface.fill(self.game.BLACK)
         self.square_size = self.surface_size//n

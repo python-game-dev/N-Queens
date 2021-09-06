@@ -149,7 +149,7 @@ class PlayerTypeMenu(Menu):
             self.game.display.fill(self.game.BLACK)
             self.game.draw_text("Choose Player Type:", 20, self.mid_w, self.mid_h - 30)
             self.game.draw_text("AI", 15, self.aix, self.aiy)
-            #self.game.draw_text("HUMAN", 15, self.humanx, self.humany)
+            self.game.draw_text("HUMAN", 15, self.humanx, self.humany)
             self.draw_cursor()
             self.blit_screen()
 
@@ -162,16 +162,16 @@ class PlayerTypeMenu(Menu):
             self.game.curr_menu = self.game.board_size
             if self.state == 'AI':
                 self.game.AI = True
-            '''elif self.state == 'HUMAN':
-                self.game.HUMAN = True'''
+            elif self.state == 'HUMAN':
+                self.game.HUMAN = True
             self.run_display = False
-        '''elif self.game.UP_KEY or self.game.DOWN_KEY:
+        elif self.game.UP_KEY or self.game.DOWN_KEY:
             if self.state == 'AI':
                 self.state = 'HUMAN'
                 self.cursor_rect.midtop = (self.humanx + self.offset + 65, self.humany)
             elif self.state == 'HUMAN':
                 self.state = 'AI'
-                self.cursor_rect.midtop = (self.aix + self.offset + 85, self.aiy)'''
+                self.cursor_rect.midtop = (self.aix + self.offset + 85, self.aiy)
 
 class BoardSizeMenu(Menu):
     def __init__(self, game):
@@ -211,7 +211,10 @@ class BoardSizeMenu(Menu):
                 self.game.board_six = True   
             elif self.state == "sizeeight":
                 self.game.board_eight = True
-            self.game.playing = True
+            if self.game.AI:
+                self.game.playing_AI = True
+            elif self.game.HUMAN:
+                self.game.playing_H = True
             self.game.running = False
             self.run_display = False
     

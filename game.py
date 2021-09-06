@@ -5,7 +5,8 @@ class NQueen_Game():
     def __init__(self):
         pygame.init()
         self.running = True
-        self.playing = False
+        self.playing_AI = False
+        self.playing_H = False
         self.AI = False
         self.HUMAN = False
         self.board_four = False
@@ -30,39 +31,26 @@ class NQueen_Game():
         self.curr_menu = self.main_menu
         self.board = Board(self)
     def game_loop(self):
-        self.playing = True
-        if self.playing:
+        self.playing_AI = True
+        if self.playing_AI:
             self.check_events()
             if self.START_KEY:
-                self.playing=False
+                self.playing_AI=False
             self.display.fill(self.BLACK)
             if self.AI and self.board_four:
                 #self.draw_text('Type: AI', 20, self.DISPLAY_W/2, self.DISPLAY_H/2-20)
                 #self.draw_text('Size: 4', 20, self.DISPLAY_W/2, self.DISPLAY_H/2 + 10)
-                self.board.draw_board(4)
+                self.board.draw_board_AI(4)
                 
             elif self.AI and self.board_six:
                 #self.draw_text('Type: AI', 20, self.DISPLAY_W/2, self.DISPLAY_H/2-20)
                 #self.draw_text('Size: 6', 20, self.DISPLAY_W/2, self.DISPLAY_H/2 + 10)
-                self.board.draw_board(6)
+                self.board.draw_board_AI(6)
                 
             elif self.AI and self.board_eight:
                 #self.draw_text('Type: AI', 20, self.DISPLAY_W/2, self.DISPLAY_H/2-20)
                 #self.draw_text('Size: 8', 20, self.DISPLAY_W/2, self.DISPLAY_H/2 + 10)
-                self.board.draw_board(8)
-                 
-            elif self.HUMAN and self.board_four:
-                #self.draw_text('Type: HUMAN', 20, self.DISPLAY_W/2, self.DISPLAY_H/2-20)
-                #self.draw_text('Size: 4', 20, self.DISPLAY_W/2, self.DISPLAY_H/2 + 10)
-                self.board.draw_board(4)
-            elif self.HUMAN and self.board_six:
-                #self.draw_text('Type: HUMAN', 20, self.DISPLAY_W/2, self.DISPLAY_H/2-20)
-                #self.draw_text('Size: 6', 20, self.DISPLAY_W/2, self.DISPLAY_H/2 + 10)
-                self.board.draw_board(6)
-            elif self.HUMAN and self.board_eight:
-                #self.draw_text('Type: HUMAN', 20, self.DISPLAY_W/2, self.DISPLAY_H/2-20)
-                #self.draw_text('Size: 8', 20, self.DISPLAY_W/2, self.DISPLAY_H/2 + 10)
-                self.board.draw_board(8)
+                self.board.draw_board_AI(8)
             #self.board.board_window.blit(self.board.board_surface, (0,0))
             pygame.display.update()
             self.reset_keys()
@@ -71,7 +59,7 @@ class NQueen_Game():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
-                self.playing = False
+                self.playing_AI = False
                 self.curr_menu.run_display = False
                 self.AI = False
                 self.HUMAN = False
