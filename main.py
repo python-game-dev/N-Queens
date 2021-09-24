@@ -166,8 +166,8 @@ def main():
     while g.running:
         g.curr_menu.display_menu()
         
-    if g.playing_AI:
-        g.game_loop()
+    
+    g.game_loop()
 
 
     while g.playing_H:

@@ -183,7 +183,7 @@ class BoardSizeMenu(Menu):
         self.sixy = self.mid_h + 50
         self.eightx = self.mid_w
         self.eighty = self.mid_h + 70
-        self.cursor_rect.midtop = (self.fourx + self.offset+75, self.foury)
+        self.cursor_rect.midtop = (self.fourx + self.offset+80, self.foury)
 
     def display_menu(self):
         self.run_display = True
